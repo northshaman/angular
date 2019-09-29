@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,10 @@ export class AppComponent {
     {name: 'Ford2'},
   ];
   searchCar = '';
+
+  asyncTitle = Observable.of('Async title 3 seconds').delay(3000);
+
+  addCar() {
+    this.cars.push({name: 'New Car'});
+  }
 }
