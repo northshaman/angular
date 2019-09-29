@@ -1,13 +1,14 @@
-import {Directive, ElementRef, HostBinding, HostListener, Renderer2} from '@angular/core';
+import {Directive, HostBinding, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appBackground]'
 })
 export class BackgroundDirective {
-
+  // private element: ElementRef;
+  // private renderer: Renderer2;
   @HostBinding('style.backgroundColor') background: string;
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {
+  constructor() {
   }
 
   @HostListener('mouseenter') mouseEnter() {
