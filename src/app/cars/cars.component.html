@@ -2,9 +2,13 @@
 <hr>
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 <hr>
+<button class="btn btn-success" (click)="changeCarName()">Изменить машину</button>
+<button class="btn btn-danger" (click)="deleteCar()">Удалить машину</button>
+<hr>
 <div class="list-group">
-  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
-    <div class="alert alert-info">Эта машина продана.</div>
+  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" [name]="car.name">
+    <h4 class="list-group-item-heading">Название: {{ car.name }}</h4>
+    <p class="list-group-item-text">Год: {{ car.year }}</p>
   </app-car>
 </div>
 
