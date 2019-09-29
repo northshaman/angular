@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngTheo';
-  headerText = 'Создание своей директивы';
-
-  items = [1, 2, 3, 4, 5];
-  current = 1;
-
-  onCLick(item: number) {
-  this.current = item;
-  }
+  num = 2;
+  cars = [
+    {name: 'Ford'},
+    {name: 'Ford1'},
+    {name: 'Ford2'},
+  ];
+  searchCar = '';
 }
