@@ -1,10 +1,23 @@
 <div class="container">
-<!--  <div class="row">-->
-<!--    <div class="col-12">-->
-<!--      <app-cars></app-cars>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="row">-->
+  <!--    <div class="col-12">-->
+  <!--      <app-cars></app-cars>-->
+  <!--    </div>-->
+  <!--  </div>-->
   <div class="col-xs-8 col-xs-oddset-2">
-    <h3 appBackground>{{headerText}}</h3>
+    <h3 [appBackground]="'red'" [defaultColor]="'yellow'">{{headerText}}</h3>
+
+    <ul class="list-group">
+      <li *ngFor="let item of items" (click)="onCLick(item)" class="list-group-item">
+        {{item}}
+      </li>
+    </ul>
+
+    <div [ngSwitch]="current">
+      <p *ngSwitchCase="1">1</p>
+      <p *ngSwitchCase="2">2</p>
+      <p *ngSwitchCase="3">3</p>
+      <p *ngSwitchDefault>default</p>
+    </div>
   </div>
 </div>
